@@ -64,6 +64,20 @@ h1 {
     border: 1px solid #ccc;
     box-sizing: border-box;
     transition: border-color 0.3s;
+}
+
+/* Hide arrows from number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.input-group select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -133,19 +147,27 @@ button:hover {
     color: #005a9c;
 }
 
-.offset-options-container {
+.offset-wrapper {
     margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.result-options {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.offset-box {
+    background-color: #eaf6ff;
+    padding: 20px;
+    border-radius: 8px;
+    flex-basis: 48%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+
+.offset-box h3 {
+    margin-top: 0;
+    color: #005a9c;
+}
+
 
 .info-icon {
     cursor: pointer;
@@ -211,7 +233,6 @@ button:hover {
     margin-bottom: 15px;
 }
 
-
 .report-boxes {
     display: flex;
     justify-content: space-between;
@@ -237,7 +258,6 @@ button:hover {
     margin: 10px 0;
 }
 
-
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     body {
@@ -249,7 +269,7 @@ button:hover {
         padding: 15px;
     }
 
-    .report-boxes {
+    .report-boxes, .offset-wrapper {
         flex-direction: column;
     }
 
