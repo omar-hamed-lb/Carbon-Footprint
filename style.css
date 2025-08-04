@@ -21,13 +21,17 @@ h1 {
     margin-top: 0.5em;
 }
 
+main {
+    width: 100%;
+    max-width: 500px;
+}
+
 .calculator {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
     box-sizing: border-box;
 }
 
@@ -128,7 +132,6 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
     box-sizing: border-box;
     text-align: center;
     opacity: 0;
@@ -167,7 +170,6 @@ button:hover {
     margin-top: 0;
     color: #005a9c;
 }
-
 
 .info-icon {
     cursor: pointer;
