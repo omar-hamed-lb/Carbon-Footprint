@@ -10,12 +10,15 @@ body {
 }
 
 header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
 h1 {
     color: #005a9c;
+    font-size: 1.7em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 
 .calculator {
@@ -117,10 +120,12 @@ button:hover {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    visibility: hidden;
 }
 
 .result-container.visible {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 

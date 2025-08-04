@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const treesNeeded = Math.ceil(totalCO2 / co2Factors.treeAbsorption);
         const carbonTax = (totalCO2InTonnes * co2Factors.carbonTaxRate).toFixed(2);
 
-        document.getElementById('total-co2').textContent = `Total: ${totalCO2.toFixed(2)} kg/year (${totalCO2InTonnes.toFixed(2)} tonnes/year)`;
-        document.getElementById('trees-needed').textContent = `${treesNeeded} trees`;
-        document.getElementById('carbon-tax').textContent = `$${carbonTax} (based on $${co2Factors.carbonTaxRate}/tonne)`;
+        document.getElementById('total-co2').innerHTML = `<b style="font-size: 1.5em;">${totalCO2.toFixed(2)} kg/year </b> <br> <span style="font-weight: normal;"> (${totalCO2InTonnes.toFixed(2)} tonnes/year)</span>`;
+        document.getElementById('trees-needed').innerHTML = `<b style="font-size: 1.5em;">${treesNeeded} trees </b><br> 1 tree absorbs 25 kg CO2/year`;
+        document.getElementById('carbon-tax').innerHTML = `<b style="font-size: 1.5em;">$${carbonTax}</b> <br> based on $${co2Factors.carbonTaxRate}/tonne`;
 
         document.getElementById('fuel-report').textContent = `Car Fuel: ${annualFuelCO2.toFixed(2)} kg`;
         document.getElementById('power-report').textContent = `Electricity: ${annualPowerCO2.toFixed(2)} kg`;
@@ -115,5 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('breathing-report').textContent = `Breathing: ${annualBreathingCO2.toFixed(2)} kg`;
 
         resultDiv.classList.add('visible');
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
     });
 });
