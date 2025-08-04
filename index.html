@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 Emission Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Annual Carbon Footprint</h1>
+    </header>
+    <main>
+        <div class="calculator">
+            <div class="input-section">
+                <h3>Transportation</h3>
+                <div class="input-group">
+                    <label for="fuel">Monthly Car Fuel Consumption (L)</label>
+                    <input type="number" id="fuel" placeholder="e.g., 100">
+                </div>
+                <div class="input-group">
+                    <label for="fuel-type">Fuel Type <span class="info-icon" data-info="fuel-type">&#9432;</span></label>
+                    <select id="fuel-type">
+                        <option value="gasoline">Gasoline</option>
+                        <option value="diesel">Diesel</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="flights-number">Number of Flights (per year) <span class="info-icon" data-info="flights">&#9432;</span></label>
+                    <input type="number" id="flights-number" min="0" placeholder="e.g., 2">
+                </div>
+                <div id="flights-details">
+                    <!-- Flight details will be inserted here dynamically -->
+                </div>
+            </div>
+
+            <div class="input-section">
+                <h3>Household Energy</h3>
+                <div class="input-group">
+                    <label for="power">Monthly Electricity Consumption (kWh) </label>
+                    <input type="number" id="power" placeholder="e.g., 100">
+                </div>
+                <div class="input-group">
+                    <label for="power-type">Electricity Source <span class="info-icon" data-info="power-type">&#9432;</span></label>
+                    <select id="power-type">
+                        <option value="fuel">Fossil Fuel / Grid</option>
+                        <option value="solar">Solar</option>
+                        <option value="wind">Wind</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="gas">Monthly Natural Gas Consumption (kg) <span class="info-icon" data-info="gas">&#9432;</span></label>
+                    <input type="number" id="gas" placeholder="e.g., 50">
+                </div>
+            </div>
+            
+            <button id="calculate-btn">Calculate</button>
+        </div>
+        <div id="result" class="result-container">
+            <h2>Your Annual Carbon Footprint</h2>
+            <div class="report-wrapper">
+                <h3>Emission Breakdown</h3>
+                <p id="total-co2"></p>
+                <div class="report-boxes">
+                    <div class="report-box">
+                        <h4>Transportation</h4>
+                        <p id="fuel-report"></p>
+                        <p id="flights-report"></p>
+                    </div>
+                    <div class="report-box">
+                        <h4>Household & Personal</h4>
+                        <p id="power-report"></p>
+                        <p id="gas-report"></p>
+                        <p id="breathing-report"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="offset-options-container">
+                <div class="result-options">
+                    <div>
+                        <h3>Trees Needed to Offset</h3>
+                        <p id="trees-needed"></p>
+                    </div>
+                    <div>
+                        <h3>Carbon Tax</h3>
+                        <p id="carbon-tax"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="info-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
