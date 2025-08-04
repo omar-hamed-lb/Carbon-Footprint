@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('breathing-report').textContent = `Breathing: ${annualBreathingCO2.toFixed(2)} kg`;
 
         resultDiv.classList.add('visible');
-        resultDiv.scrollIntoView({ behavior: 'smooth' });
+
+        // Delay the scroll slightly to allow the animation to begin
+        setTimeout(() => {
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
     });
 });
