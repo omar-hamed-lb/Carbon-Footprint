@@ -114,6 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('flights-report').textContent = `Flights: ${annualFlightCO2.toFixed(2)} kg`;
         document.getElementById('breathing-report').textContent = `Breathing: ${annualBreathingCO2.toFixed(2)} kg`;
 
+        if (typeof gtag === 'function') {
+            gtag('event', 'calculation_completed', {
+                'event_category': 'Carbon Footprint',
+                'event_label': 'Successful Calculation',
+                'value': totalCO2.toFixed(2),
+                'fuel_co2': annualFuelCO2.toFixed(2),
+                'power_co2': annualPowerCO2.toFixed(2),
+                'gas_co2': annualGasCO2.toFixed(2),
+                'flights_co2': annualFlightCO2.toFixed(2),
+                'breathing_co2': annualBreathingCO2.toFixed(2),
+                'trees_needed': treesNeeded,
+                'carbon_tax': parseFloat(carbonTax)
+            });
+        }
+
         resultDiv.classList.add('visible');
 
         // Delay the scroll slightly to allow the animation to begin
